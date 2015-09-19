@@ -19,4 +19,11 @@ public class TestCell {
 
         assertEquals("-", cell.stateSymbol());
     }
+
+    @Test
+    public void shouldReturnXToRepresentALiveCell() {
+        Cell cell = new Cell("alive");
+
+        assertEquals("X", cell.stateSymbol());
+    }
 }

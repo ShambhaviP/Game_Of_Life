@@ -12,7 +12,8 @@ public class Cell {
     public String stateSymbol() {
         if (state.equals("dead")) {
             return "-";
+        } else {
+            return "X";
         }
-        return "X";
     }
 }
