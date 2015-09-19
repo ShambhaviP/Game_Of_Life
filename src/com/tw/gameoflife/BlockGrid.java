@@ -23,4 +23,8 @@ public class BlockGrid {
         twoDimensionalGrid.add(rowOfCells);
         return twoDimensionalGrid;
     }
+
+    public String transformStateOfCell(ArrayList<ArrayList<String>> twoDimensionalGrid) {
+        return "-";
+    }
 }
