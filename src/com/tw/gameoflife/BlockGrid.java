@@ -25,10 +25,16 @@ public class BlockGrid {
     }
 
     public String transformStateOfCell(ArrayList<ArrayList<String>> twoDimensionalGrid) {
-        return "-";
-    }
+        if (twoDimensionalGrid.size() > 1) {
+            for (int row = 0; row < twoDimensionalGrid.size(); row++) {
+                for (int column = 0; column < twoDimensionalGrid.get(row).size(); column++) {
+                    if (twoDimensionalGrid.get(row).get(column + 1).equals("X") && twoDimensionalGrid.get(row + 1).get(column).equals("X") && twoDimensionalGrid.get(row + 1).get(column + 1).equals("X")) {
+                        return "X";
+                    }
+                }
+            }
+        }
 
-    public int numberOfNeighbours(ArrayList<ArrayList<String>> twoDimensionalGrid) {
-        return 2;
+        return "-";
     }
 }

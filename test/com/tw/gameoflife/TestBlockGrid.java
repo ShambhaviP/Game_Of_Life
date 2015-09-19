@@ -30,26 +30,34 @@ public class TestBlockGrid {
     }
 
     @Test
-    public void shouldReturnSymbolOfDeadCellIfALiveCellHasFewerThanTwoLiveCells() {
+    public void shouldReturnSymbolOfDeadCellIfThereIsLessThanFourCellsInGrid() {
         BlockGrid blockGrid = new BlockGrid();
-        ArrayList<String> rowOfCells = new ArrayList<>();
-        rowOfCells.add("X");
-        rowOfCells.add("-");
+        Cell cell1 = new Cell("alive");
+        ArrayList<String> rowOfCells1 = new ArrayList<>();
+        rowOfCells1.add(cell1.stateSymbol());
         ArrayList<ArrayList<String>> grid = new ArrayList<>();
-        grid.add(rowOfCells);
+        grid.add(rowOfCells1);
 
         assertEquals("-", blockGrid.transformStateOfCell(grid));
     }
 
     @Test
-    public void shouldHaveAtLeastTwoNeighboursForEachCell() {
+    public void shouldReturnXForTheFirstLiveCellOfATwoByTwoGridHavingAllLiveCellsInItsSurrounding() {
         BlockGrid blockGrid = new BlockGrid();
-        ArrayList<String> rowOfCells = new ArrayList<>();
-        rowOfCells.add("X");
-        rowOfCells.add("-");
+        Cell cell1 = new Cell("alive");
+        Cell cell2 = new Cell("alive");
+        Cell cell3 = new Cell("alive");
+        Cell cell4 = new Cell("alive");
+        ArrayList<String> rowOfCells1 = new ArrayList<>();
+        rowOfCells1.add(cell1.stateSymbol());
+        rowOfCells1.add(cell2.stateSymbol());
+        ArrayList<String> rowOfCells2 = new ArrayList<>();
+        rowOfCells2.add(cell3.stateSymbol());
+        rowOfCells2.add(cell4.stateSymbol());
         ArrayList<ArrayList<String>> grid = new ArrayList<>();
-        grid.add(rowOfCells);
+        grid.add(rowOfCells1);
+        grid.add(rowOfCells2);
 
-        assertEquals(2, blockGrid.numberOfNeighbours(grid));
+        assertEquals("X", blockGrid.transformStateOfCell(grid));
     }
 }
