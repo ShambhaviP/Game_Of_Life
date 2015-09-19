@@ -14,7 +14,7 @@ public class TestCell {
     }
 
     @Test
-    public void shouldReturnMinusSymbolToRepresentACellWithAliveState() {
+    public void shouldReturnMinusSymbolToRepresentACellWithDeadState() {
         Cell cell = new Cell("dead");
 
         assertEquals("-", cell.stateSymbol());
