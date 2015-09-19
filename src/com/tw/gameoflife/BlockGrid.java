@@ -27,4 +27,8 @@ public class BlockGrid {
     public String transformStateOfCell(ArrayList<ArrayList<String>> twoDimensionalGrid) {
         return "-";
     }
+
+    public int numberOfNeighbours(ArrayList<ArrayList<String>> twoDimensionalGrid) {
+        return 2;
+    }
 }

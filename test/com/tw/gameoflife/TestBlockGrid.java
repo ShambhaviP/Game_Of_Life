@@ -40,4 +40,16 @@ public class TestBlockGrid {
 
         assertEquals("-", blockGrid.transformStateOfCell(grid));
     }
+
+    @Test
+    public void shouldHaveAtLeastTwoNeighboursForEachCell() {
+        BlockGrid blockGrid = new BlockGrid();
+        ArrayList<String> rowOfCells = new ArrayList<>();
+        rowOfCells.add("X");
+        rowOfCells.add("-");
+        ArrayList<ArrayList<String>> grid = new ArrayList<>();
+        grid.add(rowOfCells);
+
+        assertEquals(2, blockGrid.numberOfNeighbours(grid));
+    }
 }
