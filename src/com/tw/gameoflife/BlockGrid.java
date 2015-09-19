@@ -18,4 +18,9 @@ public class BlockGrid {
         rowOfCells.add(cell.stateSymbol());
         return rowOfCells;
     }
+
+    public ArrayList<ArrayList<String>> fillGridWithCellRows(ArrayList<String> rowOfCells) {
+        twoDimensionalGrid.add(rowOfCells);
+        return twoDimensionalGrid;
+    }
 }
