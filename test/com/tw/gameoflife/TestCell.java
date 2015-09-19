@@ -7,9 +7,16 @@ import static org.junit.Assert.assertEquals;
 public class TestCell {
 
     @Test
-    public void shouldUseXToRepresentAnAliveCell() {
+    public void shouldUseXToRepresentTheStateOfACell() {
         Cell cell = new Cell("alive");
 
         assertEquals("X", cell.stateSymbol());
+    }
+
+    @Test
+    public void shouldReturnMinusSymbolToRepresentACellWithAliveState() {
+        Cell cell = new Cell("dead");
+
+        assertEquals("-", cell.stateSymbol());
     }
 }
